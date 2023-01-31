@@ -1,0 +1,98 @@
+.CardProjet{
+  width: 90%;
+  margin-top: 5%;
+  margin-bottom: 30%;
+  margin-left: 5%;
+  padding: 2%;
+  background: #e0e3da61;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 255, .2);
+  transition: all .2s;
+  box-shadow: 12px 12px 2px 1px #F28705;
+ }
+ 
+.CardProjet:hover {
+  box-shadow: -12px 12px 2px -1px #F28705;
+ 
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #171819;
+  margin-top: 2rem;
+}
+
+.container {
+  margin: 2%;
+  max-width: 100%;
+  max-height: 100%;
+
+  /* display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px; */
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+.container:hover img {
+  opacity: 0.3;
+}
+.container img:hover {
+  transform: perspective(800px) rotateY(0deg);
+  opacity: 1;
+}
+
+.Projet {
+  width: 60%;
+  /* height: 100%; */
+  object-fit: cover;
+  cursor: pointer;
+
+  -webkit-box-reflect: below 2px
+    linear-gradient(transparent, transparent, #0004);
+
+  transform-origin: center;
+  transform: perspective(800px) rotateY(25deg);
+  transition: 0.5s;
+}
+
+h1,
+h3 {
+  margin: 0;
+}
+
+figcaption {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+@media screen AND (min-width: 940px) {
+
+  .CardProjet{
+    margin-bottom: 10%;
+
+  }
+  .container{
+    display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 3%;
+  grid-row-gap: 1%;
+  }
+
+  .Name {
+    font-size: 150%;
+  }
+  .Fonction {
+    font-size: 150%;
+  }
+  p {
+    font-size: 200%;
+    text-align: left;
+  }
+}

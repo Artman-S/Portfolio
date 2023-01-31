@@ -1,0 +1,46 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f28705;
+  box-shadow: 0 30px 40px 40px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (min-width: 768px) {
+  footer {
+    height: 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  font-family: roboto;
+  font-weight: bolder;
+  font-size: 100%;
+  color: #171819
+  ;
+  font-weight: bolder
+}
+
+.ancreFooter {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+img {
+  width: 10%;
+}
