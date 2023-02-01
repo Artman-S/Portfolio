@@ -23,6 +23,9 @@ function Web() {
               </a>
               <figcaption>{project.status}</figcaption>
               <h5>{project.description}</h5>
+              <button type="button">Modify</button>
+              <button type="button">Delete</button>
+              <button type="button">Hidden</button>
             </div>
           );
         })}

@@ -7,6 +7,9 @@ import "./Home.css";
 function Home() {
   return (
     <>
+      <a className="Connect" href="/login" alt="admin">
+        admin
+      </a>
       <div className="BgColorHome">
         <div className="Name">
           {

@@ -1,18 +1,13 @@
-/* nav {
+nav {
   display: flex;
-  margin: 0% 1% 0% 1%;
-  background-color: #edefee;
-  border: solid 0.1rem;
+  background-color: #f28705b0;
   border-top: 0;
-  border-radius: 0rem 0rem 1rem 1rem;
-  -webkit-border-radius: 0rem 0rem 1rem 1rem;
-  -moz-border-radius: 0rem 0rem 1rem 1rem;
 }
 
 ul {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
   padding: 0;
 }
@@ -33,19 +28,13 @@ li {
   color: #41403c;
 }
 
-.ancreNavbar:hover {
-  background-color: #d08856;
-  border-radius: 1rem;
-  width: 13rem;
-}
-
 @media screen AND (min-width: 940px) {
   li {
-    font-size: 300%;
+    font-size: 150%;
   }
-} */
+}
 
-.bm-item {
+/* .bm-item {
   display: inline-block;
   text-decoration: none;
   color: #eff0d1;
@@ -57,12 +46,12 @@ li {
   margin-bottom: 2rem;
 }
 
-/*Link hover*/
+/* Link hover */
 .bm-item:hover {
   color: #f58a07;
 }
 
-/*Button menu burger*/
+/* Button menu burger */
 .bm-burger-button {
   position: absolute;
   width: 36px;
@@ -139,4 +128,4 @@ li {
 .login_button:active {
   background-color: #eff0d1;
   color: #262730;
-}
+} */

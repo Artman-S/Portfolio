@@ -1,5 +1,6 @@
 const models = require("../models");
 
+// get existing project
 const getProject = (req, res) => {
   models.newProjectManager
     .findAll()
@@ -11,6 +12,8 @@ const getProject = (req, res) => {
       res.sendStatus(500);
     });
 };
+
+// get existing project by id
 
 const getProjectById = (req, res) => {
   models.newProjectManager
@@ -27,6 +30,8 @@ const getProjectById = (req, res) => {
       res.sendStatus(500);
     });
 };
+
+// update existing project
 
 const projectUpdateById = (req, res) => {
   const newProjectManager = req.body;
@@ -50,6 +55,8 @@ const projectUpdateById = (req, res) => {
     });
 };
 
+// add a new project
+
 const addProject = (req, res) => {
   const newProjectManager = req.body;
 
@@ -65,6 +72,8 @@ const addProject = (req, res) => {
       res.sendStatus(500);
     });
 };
+
+// delete an existing project
 
 const deleteProjectById = (req, res) => {
   models.newProjectManager

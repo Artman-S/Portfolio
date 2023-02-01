@@ -10,19 +10,19 @@ router.put("/items/:id", itemControllers.edit);
 router.post("/items", itemControllers.add);
 router.delete("/items/:id", itemControllers.destroy);
 
-// Login
+// Route Login for the admin
 
 const userControllers = require("./controllers/userControllers");
 
-router.get("/login", userControllers.getuser);
+router.get("/login", userControllers.getUser);
 
-// Admin
+// Route Admin with CRUD for new project
 const newProjectControllers = require("./controllers/newProjectControllers");
 
-router.get("/newproject", newProjectControllers.getProject);
-router.get("/items/:id", newProjectControllers.getProjectById);
-router.put("/items/:id", newProjectControllers.projectUpdateById);
-router.post("/items", newProjectControllers.addProject);
-router.delete("/items/:id", newProjectControllers.deleteProjectById);
+router.get("/project", newProjectControllers.getProject);
+router.get("/project/:id", newProjectControllers.getProjectById);
+router.put("/project/:id", newProjectControllers.projectUpdateById);
+router.post("/project", newProjectControllers.addProject);
+router.delete("/project/:id", newProjectControllers.deleteProjectById);
 
 module.exports = router;

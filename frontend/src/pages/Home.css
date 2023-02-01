@@ -1,5 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Noto+Serif+Ahom:regular);
 
+.Connect{
+  display: flex;
+  justify-content: flex-end;
+  margin:1rem;
+  text-decoration: none;
+  color:#ffffff24 ;
+  cursor: pointer;
+}
+
 .BgColorHome{
   width: 90%;
   margin-top: 2%;
@@ -73,6 +82,8 @@ button {
   opacity: 0.8;
   letter-spacing: 1px;
   box-shadow: #c0392b 0px 7px 2px, #000 0px 8px 5px;
+  cursor: pointer;
+
 }
 
 button:hover {
