@@ -20,8 +20,6 @@
     "husky": "^7.0.0"
   },
   "dependencies": {
-    "react-burger-menu": "^3.0.9",
-    "react-router-dom": "^6.8.0",
-    "react-toastify": "^9.1.1"
+    "react-router-dom": "^6.8.0"
   }
 }

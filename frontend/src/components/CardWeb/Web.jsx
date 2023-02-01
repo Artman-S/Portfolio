@@ -8,7 +8,7 @@ function Web() {
       <div className="title">
         <h1>Projets</h1>
       </div>
-      <div className="container">
+      <div className="containerProjects">
         {projects.map((project) => {
           return (
             <div>

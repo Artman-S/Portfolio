@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif+Ahom:regular);
+
 .BgColorHome{
   width: 90%;
   margin-top: 2%;
@@ -16,7 +18,7 @@
 
 .seb{
   color: #171819;
-}
+  }
 
 .Name {
   display: flex;
@@ -80,6 +82,8 @@ button:hover {
 button:active {
   top: 4px;
   box-shadow: #c0392b 0px 3px 2px,#000 0px 3px 5px;
+  background: transparent;
+
 }
 
 @media screen AND (min-width: 940px) {
