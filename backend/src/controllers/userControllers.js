@@ -1,42 +1,27 @@
 const models = require("../models");
 
-const getUser = (req, res) => {
-  models.userManager
-    .findAll()
-    .then(([rows]) => {
-      res.send(rows);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
-
-const getUserById = (req, res) => {
-  models.userManager
-    .find(req.params.id)
-    .then(([rows]) => {
-      if (rows[0] == null) {
-        res.sendStatus(404);
-      } else {
-        res.send(rows[0]);
+const login = async (req, res) => {
+  const { email, pw } = req.body;
+  // TODO validations (length, format...)
+  models.user
+    .findByEmail(email)
+    .then(([user]) => {
+      if (!user) {
+        return res.status(403).json({ error: "User not found" });
       }
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
-
-const deleteUserById = (req, res) => {
-  models.userManager
-    .delete(req.params.id)
-    .then(([result]) => {
-      if (result.affectedRows === 0) {
-        res.sendStatus(404);
-      } else {
-        res.sendStatus(204);
-      }
+      // vérifier le MDP
+      models.user
+        .findByPW(user.pw, pw)
+        .then((match) => {
+          if (match) {
+            return res.status(200).json({ sucess: "User logged" });
+          }
+          return res.status(403).json({ error: "password incorrect" });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      return false;
     })
     .catch((err) => {
       console.error(err);
@@ -45,7 +30,5 @@ const deleteUserById = (req, res) => {
 };
 
 module.exports = {
-  getUser,
-  getUserById,
-  deleteUserById,
+  login,
 };

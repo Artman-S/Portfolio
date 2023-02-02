@@ -4,16 +4,6 @@ footer {
   width: 100%;
   background-color: #f28705;
   box-shadow: 0 30px 40px 40px rgba(0, 0, 0, 0.3);
-  font-size: 1.5rem;
-}
-
-@media screen and (min-width: 768px) {
-  footer {
-    height: 6%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
 }
 
 ul {
@@ -30,9 +20,8 @@ li {
   font-family: roboto;
   font-weight: bolder;
   font-size: 100%;
-  color: #171819
-  ;
-  font-weight: bolder
+  color: #171819;
+  font-weight: bolder;
 }
 
 .ancreFooter {
@@ -43,5 +32,18 @@ li {
 }
 
 img {
-  width: 10%;
+  width: 30%;
+}
+
+@media screen and (min-width: 940px) {
+  footer {
+    height: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
+  }
+  img {
+    width: 10%;
+  }
 }

@@ -1,4 +1,5 @@
 const express = require("express");
+const multer = require("multer");
 
 const router = express.Router();
 
@@ -11,18 +12,22 @@ router.post("/items", itemControllers.add);
 router.delete("/items/:id", itemControllers.destroy);
 
 // Route Login for the admin
-
 const userControllers = require("./controllers/userControllers");
 
-router.get("/login", userControllers.getUser);
+router.post("/login", userControllers.login);
 
-// Route Admin with CRUD for new project
+// Route image upload
+const uploadControllers = multer({ dest: `/project/` });
+
+router.post("/project", uploadControllers.uploadImage);
+
+// Route new project with CRUD for new project
 const newProjectControllers = require("./controllers/newProjectControllers");
 
+router.post("/project", newProjectControllers.addProject);
 router.get("/project", newProjectControllers.getProject);
 router.get("/project/:id", newProjectControllers.getProjectById);
 router.put("/project/:id", newProjectControllers.projectUpdateById);
-router.post("/project", newProjectControllers.addProject);
 router.delete("/project/:id", newProjectControllers.deleteProjectById);
 
 module.exports = router;

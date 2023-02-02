@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
-import Admin from "./Pages/Admin";
+import AddProject from "./Pages/AddProject";
 import Project from "./Pages/Project";
 // import Contact from "./components/Contact/ContactForm";
 
@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/addproject" element={<AddProject />} />
           <Route path="/project" element={<Project />} />
         </Routes>
         {/* <Contact /> */}

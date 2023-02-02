@@ -58,14 +58,14 @@ const projectUpdateById = (req, res) => {
 // add a new project
 
 const addProject = (req, res) => {
-  const newProjectManager = req.body;
-
+  // eslint-disable-next-line camelcase
+  const project = req.body;
   // TODO validations (length, format...)
-
-  models.newProjectManager
-    .insert(newProjectManager)
+  console.warn(req.body);
+  models.project
+    .insert(project)
     .then(([result]) => {
-      res.location(`/items/${result.insertId}`).sendStatus(201);
+      res.location(`/project/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);

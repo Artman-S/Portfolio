@@ -1,15 +1,12 @@
 import React, { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+// import instance from "../helpers/axios";
+import axios from "axios";
 import Nav from "../components/NavBar/Nav";
-import instance from "../helpers/axios";
 
-import "./Admin.css";
+import "./AddProject.css";
 
-function Admin() {
+function AddProject() {
   const [cards, setCards] = useState([{ id: 1, image: null }]);
-  const notify = () => {
-    toast.dark(" project created ! ✅ ");
-  };
 
   // add a new card form for new project
   const handleAddCard = () => {
@@ -30,22 +27,19 @@ function Admin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    instance
-      .post("/project", project)
-      .then((res) => console.warn(res.data, notify()))
+    console.warn(project);
+    // instance
+    //   .post("/project", project)
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/project`, project)
+      .then((res) => console.warn(res.data))
       .catch((err) => console.error(err));
   };
+
   return (
     <>
       <Nav />
       <div>
-        <ToastContainer
-          theme="dark"
-          autoClose={2000}
-          position="bottom-center"
-          className="toast-container"
-          toastClassName="dark-toast"
-        />
         {cards.map((card) => (
           <div className="ContainerFormVehicle" key={card.id}>
             {card.content}
@@ -139,7 +133,7 @@ function Admin() {
             className="AddNewVehicle"
             onClick={handleAddCard}
           >
-            Add New Vehicle
+            Add New Project
           </button>
         </div>
       </div>
@@ -147,4 +141,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default AddProject;

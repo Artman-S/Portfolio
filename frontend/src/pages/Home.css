@@ -1,33 +1,33 @@
 @import url(https://fonts.googleapis.com/css?family=Noto+Serif+Ahom:regular);
 
-.Connect{
+.Connect {
   display: flex;
   justify-content: flex-end;
-  margin:1rem;
+  margin: 1rem;
   text-decoration: none;
-  color:#ffffff24 ;
+  color: #ffffff24;
   cursor: pointer;
 }
 
-.BgColorHome{
+.BgColorHome {
   width: 90%;
   margin-top: 2%;
   margin-left: 5%;
   padding: 2%;
   background: #e0e3da61;
   border-radius: 5px;
-  border: 1px solid rgba(0, 0, 255, .2);
-  transition: all .2s;
-  box-shadow: 12px 12px 2px 1px #F28705;
-}
-   
-.BgColorHome:hover {
-  box-shadow: -12px 12px 2px -1px #F28705;
+  border: 1px solid rgba(0, 0, 255, 0.2);
+  transition: all 0.2s;
+  box-shadow: 12px 12px 2px 1px #f28705;
 }
 
-.seb{
+.BgColorHome:hover {
+  box-shadow: -12px 12px 2px -1px #f28705;
+}
+
+.seb {
   color: #171819;
-  }
+}
 
 .Name {
   display: flex;
@@ -67,7 +67,7 @@ h6 {
   font-weight: bold;
 } */
 button {
-  --bg: #F28705;
+  --bg: #f28705;
   --text-color: #fff;
   position: relative;
   width: 150px;
@@ -83,7 +83,6 @@ button {
   letter-spacing: 1px;
   box-shadow: #c0392b 0px 7px 2px, #000 0px 8px 5px;
   cursor: pointer;
-
 }
 
 button:hover {
@@ -92,9 +91,8 @@ button:hover {
 
 button:active {
   top: 4px;
-  box-shadow: #c0392b 0px 3px 2px,#000 0px 3px 5px;
+  box-shadow: #c0392b 0px 3px 2px, #000 0px 3px 5px;
   background: transparent;
-
 }
 
 @media screen AND (min-width: 940px) {
