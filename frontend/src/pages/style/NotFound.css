@@ -1,0 +1,23 @@
+
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40rem;
+  background-color: rgba(245, 245, 245, 0.704);
+}
+
+@media screen AND (min-width: 940px) {
+
+.notFoundContainer {
+    height: 54rem;
+    background-color: rgba(245, 245, 245, 0.704);
+  }
+
+  .notFoundLottie {
+    height: 40rem;
+  }
+
+}
+

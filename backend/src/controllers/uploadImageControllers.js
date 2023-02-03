@@ -3,11 +3,11 @@ const models = require("../models");
 // add image to project
 
 const uploadImage = (req, res) => {
-  console.warn(req.body);
+  console.warn(req.file);
   // eslint-disable-next-line camelcase
-  const image = req.body;
+  const image = req.file;
   // TODO validations (length, format...)
-  console.warn(req.body);
+  console.warn(req.file);
   models.project
     .insert(image)
     .then(([result]) => {

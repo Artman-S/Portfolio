@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import "./Login.css";
-// import instance from "../helpers/axios";
 import axios from "axios";
+import Footer from "../components/Footer/Footer";
+import "./style/Login.css";
+// import instance from "../helpers/axios";
 
-function Login() {
+function Login({ handleAdmin, handleLogout }) {
   const [loginUser, setLoginUser] = useState("");
   const navigate = useNavigate();
 
@@ -18,7 +19,11 @@ function Login() {
     //   .post("/login", loginUser)
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/login`, loginUser)
-      .then(() => navigate("/addProject"))
+      .then(() => {
+        handleAdmin(true);
+        handleLogout(true);
+        navigate("/addProject");
+      })
       .catch((err) => console.error(err));
   };
 
@@ -31,6 +36,7 @@ function Login() {
             type="email"
             name="email"
             placeholder="example@gmail.com"
+            value="sebastien.artesi@gmail.com"
             onChange={handleChangeLogin}
             required
           />
@@ -39,6 +45,7 @@ function Login() {
             type="password"
             name="password"
             placeholder="Password"
+            value="azerty2023"
             onChange={handleChangeLogin}
             required
           />
@@ -47,6 +54,7 @@ function Login() {
           </button>
         </form>
       </div>
+      <Footer />
     </div>
   );
 }

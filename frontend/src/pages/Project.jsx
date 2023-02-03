@@ -1,19 +1,14 @@
 import Web from "../components/CardWeb/Web";
-// import Nav from "../components/NavBar/Nav";
-import "./Project.css";
+import Nav from "../components/NavBar/Nav";
+import Footer from "../components/Footer/Footer";
+import "./style/Project.css";
 
-export default function Project() {
+export default function Project({ admin }) {
   return (
-    <>
-      <div>
-        {/* <Nav /> */}
-        <Web />
-      </div>
-      <div>
-        <button type="button">Modify</button>
-        <button type="button">Delete</button>
-        <button type="button">Hidden</button>
-      </div>
-    </>
+    <div>
+      <Nav />
+      <Web admin={admin} />
+      <Footer />
+    </div>
   );
 }

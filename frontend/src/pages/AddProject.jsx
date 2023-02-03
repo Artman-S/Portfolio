@@ -2,8 +2,9 @@ import React, { useState } from "react";
 // import instance from "../helpers/axios";
 import axios from "axios";
 import Nav from "../components/NavBar/Nav";
+import Footer from "../components/Footer/Footer";
 
-import "./AddProject.css";
+import "./style/AddProject.css";
 
 function AddProject() {
   const [cards, setCards] = useState([{ id: 1, image: null }]);
@@ -27,7 +28,6 @@ function AddProject() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.warn(project);
     // instance
     //   .post("/project", project)
     axios
@@ -137,6 +137,7 @@ function AddProject() {
           </button>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

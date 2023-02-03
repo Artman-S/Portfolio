@@ -11,8 +11,18 @@ function Nav() {
           </Link>
         </li>
         <li>
+          <Link className="ancreNavbar" to="/addproject">
+            Add New Project
+          </Link>
+        </li>
+        <li>
           <Link className="ancreNavbar" to="/project">
             Project
+          </Link>
+        </li>
+        <li>
+          <Link className="ancreNavbar" to="/">
+            Log out
           </Link>
         </li>
         {/* <li>

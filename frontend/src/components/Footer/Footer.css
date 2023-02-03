@@ -16,12 +16,13 @@ ul {
 
 li {
   display: flex;
+  justify-content: space-around;
   align-items: center;
   font-family: roboto;
   font-weight: bolder;
-  font-size: 100%;
   color: #171819;
   font-weight: bolder;
+  width: 90%;
 }
 
 .ancreFooter {
@@ -35,15 +36,27 @@ img {
   width: 30%;
 }
 
+.Gitcat{
+  width:40%;
+}
+
 @media screen and (min-width: 940px) {
   footer {
-    height: 7%;
+    height: 9%;
     display: flex;
+    justify-content: baseline;
     align-items: center;
     justify-content: space-between;
     font-size: 1.5rem;
   }
+ 
+  li{
+    width: 50%;
+  }
   img {
-    width: 10%;
+    width: 18%;
+  }
+  .gitcat{
+    width: 25%;
   }
 }

@@ -2,7 +2,7 @@ const models = require("../models");
 
 // get existing project
 const getProject = (req, res) => {
-  models.newProjectManager
+  models.project
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -16,7 +16,7 @@ const getProject = (req, res) => {
 // get existing project by id
 
 const getProjectById = (req, res) => {
-  models.newProjectManager
+  models.project
     .find(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
@@ -33,21 +33,12 @@ const getProjectById = (req, res) => {
 
 // update existing project
 
-const projectUpdateById = (req, res) => {
-  const newProjectManager = req.body;
-
-  // TODO validations (length, format...)
-
-  newProjectManager.id = parseInt(req.params.id, 10);
-
-  models.newProjectManager
-    .update(newProjectManager)
-    .then(([result]) => {
-      if (result.affectedRows === 0) {
-        res.sendStatus(404);
-      } else {
-        res.sendStatus(204);
-      }
+const UpdateprojectById = (req, res) => {
+  const project = req.body;
+  models.project
+    .UpdateprojectById(project)
+    .then(() => {
+      res.status(201).json({ success: "Project modified" });
     })
     .catch((err) => {
       console.error(err);
@@ -76,7 +67,7 @@ const addProject = (req, res) => {
 // delete an existing project
 
 const deleteProjectById = (req, res) => {
-  models.newProjectManager
+  models.project
     .delete(req.params.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
@@ -94,7 +85,7 @@ const deleteProjectById = (req, res) => {
 module.exports = {
   getProject,
   getProjectById,
-  projectUpdateById,
+  UpdateprojectById,
   addProject,
   deleteProjectById,
 };

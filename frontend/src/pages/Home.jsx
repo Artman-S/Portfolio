@@ -1,5 +1,7 @@
 import Web from "../components/CardWeb/Web";
-import "./Home.css";
+import Footer from "../components/Footer/Footer";
+
+import "./style/Home.css";
 // import des composants
 
 // import des données
@@ -32,6 +34,7 @@ function Home() {
         </a>
       </div>
       <Web />
+      <Footer />
     </>
   );
 }
