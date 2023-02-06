@@ -34,12 +34,21 @@ const getProjectById = (req, res) => {
 
 // update existing project
 
-const updateprojectById = (req, res) => {
+const updateProjectById = (req, res) => {
   const project = req.body;
+
+  // TODO validations (length, format...)
+
+  project.id = parseInt(req.params.id, 10);
+
   models.project
-    .updateprojectById(project)
-    .then(() => {
-      res.status(201).json({ success: "Project modified" });
+    .update(project)
+    .then(([result]) => {
+      if (result.affectedRows === 0) {
+        res.sendStatus(404);
+      } else {
+        res.sendStatus(204);
+      }
     })
     .catch((err) => {
       console.error(err);
@@ -96,7 +105,7 @@ const deleteProjectById = (req, res) => {
 module.exports = {
   getProject,
   getProjectById,
-  updateprojectById,
+  updateProjectById,
   addProject,
   deleteProjectById,
 };

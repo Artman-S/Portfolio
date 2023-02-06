@@ -19,17 +19,17 @@ function Web({ admin }) {
       .catch((err) => console.error(err));
   };
 
-  // useEffect(() => {
-  //   instance
-  //     .get(`/project`, project)
-  //     .then((result) => {
-  //       setProject(result.data);
-  //       console.warn(project);
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     });
-  // }, []);
+  useEffect(() => {
+    instance
+      .get(`/project`, project)
+      .then((result) => {
+        setProject(result.data);
+        console.warn(project);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
   // const hUpdate = (id) => {
   //   axios
   //     .put(`${import.meta.env.VITE_BACKEND_URL}/project/${id}`, project)
@@ -85,11 +85,11 @@ function Web({ admin }) {
                   </a>
                   <figcaption>{projects.status}</figcaption>
                   <h5>{projects.description}</h5>
-                  {admin ? (
+                  {/* {admin ? (
                     <button type="button" onClick={() => hUpdate(project.id)}>
                       Modify
                     </button>
-                  ) : null}
+                  ) : null} */}
                   {admin ? (
                     <button
                       className="btn"

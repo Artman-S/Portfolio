@@ -18,16 +18,12 @@ class newProjectManager extends AbstractManager {
     );
   }
 
-  update(project) {
+  // eslint-disable-next-line camelcase
+  update({ title, description, link_project, link_github, image, status }) {
     return this.connection.query(
-      `update ${this.table} set title = ?, description= ?, link_project= ?, link_github= ?, status= ? where id = ?`,
-      [
-        project.title,
-        project.description,
-        project.link_project,
-        project.link_github,
-        project.status,
-      ]
+      `update ${this.table} set title = ?, description= ?, link_project= ?, link_github= ?, image= ?, status= ? where id = ?`,
+      // eslint-disable-next-line camelcase
+      [title, description, link_project, link_github, image, status]
     );
   }
 }

@@ -59,10 +59,9 @@ h3 {
   margin: 0;
 }
 
-.link{
- /* display: flex; */
- width: 10%;
-
+.link {
+  /* display: flex; */
+  width: 10%;
 }
 
 figcaption {
@@ -71,7 +70,7 @@ figcaption {
   font-weight: bold;
 }
 
-.btn{
+.btn {
   margin-bottom: 1%;
 }
 
@@ -100,10 +99,8 @@ figcaption {
     font-size: 150%;
   }
 
-  .Github{
-
+  .Github {
     width: 10%;
-
   }
 
   p {
@@ -111,7 +108,7 @@ figcaption {
     text-align: left;
   }
 
-  .btn{
+  .btn {
     display: flex;
     flex-direction: row;
     justify-content: center;

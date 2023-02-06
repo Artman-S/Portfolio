@@ -41,7 +41,7 @@ const fileMiddleware = require("./middleware/fileMiddleware");
 router.post("/project", fileMiddleware, newProjectControllers.addProject);
 router.get("/project", newProjectControllers.getProject);
 router.get("/project/:id", newProjectControllers.getProjectById);
-router.put("/project/:id", newProjectControllers.updateprojectById);
+router.put("/project/:id", newProjectControllers.updateProjectById);
 router.delete("/project/:id", newProjectControllers.deleteProjectById);
 
 module.exports = router;
