@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const models = require("../models");
 
 // get existing project
@@ -33,10 +34,10 @@ const getProjectById = (req, res) => {
 
 // update existing project
 
-const UpdateprojectById = (req, res) => {
+const updateprojectById = (req, res) => {
   const project = req.body;
   models.project
-    .UpdateprojectById(project)
+    .updateprojectById(project)
     .then(() => {
       res.status(201).json({ success: "Project modified" });
     })
@@ -50,17 +51,27 @@ const UpdateprojectById = (req, res) => {
 
 const addProject = (req, res) => {
   // eslint-disable-next-line camelcase
-  const project = req.body;
-  // TODO validations (length, format...)
-  console.warn(req.body);
+  const { title, description, link_project, link_github, status } = JSON.parse(
+    req.body.datas
+  );
+  const { image } = req.body;
+
+  /**
+   * project = {
+   *  title,
+   *  desc,
+   *  github,
+   *  link
+   * }
+   */
   models.project
-    .insert(project)
+    .insert({ title, description, link_project, link_github, image, status })
     .then(([result]) => {
       res.location(`/project/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
-      res.sendStatus(500);
+      res.status(500).send({ error: "Failed to insert project into database" });
     });
 };
 
@@ -85,7 +96,7 @@ const deleteProjectById = (req, res) => {
 module.exports = {
   getProject,
   getProjectById,
-  UpdateprojectById,
+  updateprojectById,
   addProject,
   deleteProjectById,
 };

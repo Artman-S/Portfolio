@@ -9,6 +9,8 @@
   border: 1px solid rgba(0, 0, 255, 0.2);
   transition: all 0.2s;
   box-shadow: 12px 12px 2px 1px #f28705;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .CardProjet:hover {
@@ -57,10 +59,20 @@ h3 {
   margin: 0;
 }
 
+.link{
+ /* display: flex; */
+ width: 10%;
+
+}
+
 figcaption {
   display: flex;
   justify-content: center;
   font-weight: bold;
+}
+
+.btn{
+  margin-bottom: 1%;
 }
 
 @media screen AND (min-width: 940px) {
@@ -68,6 +80,7 @@ figcaption {
     margin-bottom: 10%;
   }
   .containerProjects {
+    margin-bottom: 6%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -87,8 +100,22 @@ figcaption {
     font-size: 150%;
   }
 
+  .Github{
+
+    width: 10%;
+
+  }
+
   p {
     font-size: 200%;
     text-align: left;
+  }
+
+  .btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* margin: 5%; */
   }
 }

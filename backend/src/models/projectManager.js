@@ -9,17 +9,12 @@ class newProjectManager extends AbstractManager {
     return this.connection.query(`select * from  ${this.table}`);
   }
 
-  insert(project) {
+  // eslint-disable-next-line camelcase
+  insert({ title, description, link_project, link_github, image, status }) {
     return this.connection.query(
       `insert into ${this.table} (title, description, link_project, link_github, image, status) values (?, ?, ?, ?, ?, ?)`,
-      [
-        project.title,
-        project.description,
-        project.link_project,
-        project.link_github,
-        project.image,
-        project.status,
-      ]
+      // eslint-disable-next-line camelcase
+      [title, description, link_project, link_github, image, status]
     );
   }
 

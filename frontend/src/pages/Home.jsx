@@ -2,13 +2,10 @@ import Web from "../components/CardWeb/Web";
 import Footer from "../components/Footer/Footer";
 
 import "./style/Home.css";
-// import des composants
-
-// import des données
 
 function Home() {
   return (
-    <>
+    <div className="Font">
       <a className="Connect" href="/login" alt="admin">
         admin
       </a>
@@ -35,7 +32,7 @@ function Home() {
       </div>
       <Web />
       <Footer />
-    </>
+    </div>
   );
 }
 

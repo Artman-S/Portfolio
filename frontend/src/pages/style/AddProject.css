@@ -15,7 +15,8 @@ blanc beige : #EFF0D1; */
   border-radius: 1rem;
   background-color: rgb(11, 14, 32, 0.3);
   color: #eff0d1;
-  font-family: "Sora";
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .LabelVehicle {
@@ -36,7 +37,7 @@ textarea {
   border-top: 0;
   border-left: 0;
   background: #eff0d1;
-  width: 100%;
+  width: 90%;
 }
 
 fieldset {
@@ -122,8 +123,7 @@ fieldset {
   }
 
   .AddNewVehicle {
-    margin: 1%;
-    margin-bottom: 5%;
+    margin-bottom: 7%;
     border-radius: 0.2rem;
     display: flex;
     flex-direction: row;

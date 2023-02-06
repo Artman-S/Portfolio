@@ -18,10 +18,8 @@ li {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-family: roboto;
   font-weight: bolder;
   color: #171819;
-  font-weight: bolder;
   width: 90%;
 }
 
@@ -36,8 +34,8 @@ img {
   width: 30%;
 }
 
-.Gitcat{
-  width:40%;
+.Gitcat {
+  width: 40%;
 }
 
 @media screen and (min-width: 940px) {
@@ -49,14 +47,14 @@ img {
     justify-content: space-between;
     font-size: 1.5rem;
   }
- 
-  li{
+
+  li {
     width: 50%;
   }
   img {
     width: 18%;
   }
-  .gitcat{
+  .gitcat {
     width: 25%;
   }
 }

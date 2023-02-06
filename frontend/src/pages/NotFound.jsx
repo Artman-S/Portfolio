@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Player } from "@lottiefiles/react-lottie-player";
 import notfound from "../assets/lottie/t-rex-404-error-page.json";
-import Footer from "../components/Footer/Footer";
 import "./style/NotFound.css";
 
 export default function NotFound() {
@@ -13,7 +12,6 @@ export default function NotFound() {
           Go Back
         </button>
       </Link>
-      <Footer />
     </div>
   );
 }

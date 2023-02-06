@@ -2,7 +2,7 @@ const projects = [
   {
     id: "1",
     title: "A&B Resort",
-    description: "1er projet réalisé en HTML et CSS",
+    description: "Projet réalisé en HTML et CSS",
     linkSite:
       "https://wildcodeschool.github.io/2022-09-JS-RemoteFR-LesCrewStillants-P1-Hotel/",
     linkRepo:

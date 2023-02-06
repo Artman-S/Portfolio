@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-// import instance from "../helpers/axios";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 import Nav from "../components/NavBar/Nav";
 import Footer from "../components/Footer/Footer";
@@ -20,18 +19,31 @@ function AddProject() {
     setCards(cards.filter((card) => card.id !== id));
   };
 
-  const [project, setProject] = useState("");
+  const [project, setProject] = useState({});
+  const [image, setImage] = useState("");
 
   const handleChange = (e) => {
     setProject({ ...project, [e.target.name]: e.target.value });
   };
 
+  const imageRef = useRef();
+
+  const handleImage = (e) => {
+    e.preventDefault();
+    setImage(imageRef.current.files[0]);
+    // tu dois récuperer l'image.
+    // setImage & imageRef
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // instance
-    //   .post("/project", project)
+    const fd = new FormData();
+
+    fd.append("image", image);
+    fd.append("datas", JSON.stringify(project));
+
     axios
-      .post(`${import.meta.env.VITE_BACKEND_URL}/project`, project)
+      .post(`${import.meta.env.VITE_BACKEND_URL}/project`, fd)
       .then((res) => console.warn(res.data))
       .catch((err) => console.error(err));
   };
@@ -46,6 +58,7 @@ function AddProject() {
             <form
               className="LabelVehicle"
               htmlFor="Card"
+              encType="multipart/form-data"
               onSubmit={handleSubmit}
             >
               <h1>Add a new project</h1>
@@ -69,7 +82,7 @@ function AddProject() {
               />
               Link Project:{" "}
               <input
-                name="Link Project"
+                name="link_project"
                 placeholder="Link Project..."
                 type="text"
                 onChange={handleChange}
@@ -77,31 +90,38 @@ function AddProject() {
               />
               Link Github:{" "}
               <input
-                name="Link Github"
+                name="link_github"
                 placeholder="Link Github..."
                 type="text"
                 onChange={handleChange}
                 required
               />
               Picture:{" "}
-              <input name="img" type="file" onChange={handleChange} required />
+              <input
+                type="file"
+                name="image"
+                id="image"
+                ref={imageRef}
+                onChange={handleImage}
+                required
+              />
               <fieldset>
                 <legend> Status: </legend>
                 <label>
                   <input
-                    id="Ongoing"
+                    id="ongoing"
                     type="radio"
-                    name="Ongoing-complete"
-                    value="Ongoing"
+                    name="ongoing-complete"
+                    value="ongoing"
                     onChange={handleChange}
                   />{" "}
-                  Ongoing
+                  ongoing
                 </label>
                 <label>
                   <input
                     id="complete"
                     type="radio"
-                    name="Ongoing-complete"
+                    name="ongoing-complete"
                     value="complete"
                     onChange={handleChange}
                   />{" "}
