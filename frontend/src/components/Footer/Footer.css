@@ -1,0 +1,60 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f28705;
+  box-shadow: 0 30px 40px 40px rgba(0, 0, 0, 0.3);
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bolder;
+  color: #171819;
+  width: 90%;
+}
+
+.ancreFooter {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+img {
+  width: 30%;
+}
+
+.Gitcat {
+  width: 40%;
+}
+
+@media screen and (min-width: 940px) {
+  footer {
+    height: 9%;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
+  }
+
+  li {
+    width: 50%;
+  }
+  img {
+    width: 18%;
+  }
+  .gitcat {
+    width: 25%;
+  }
+}

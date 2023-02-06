@@ -1,0 +1,36 @@
+nav {
+  display: flex;
+  background-color: #f28705b0;
+  border-top: 0;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 100%;
+}
+
+.ancreNavbar {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  text-decoration: none;
+  color: #41403c;
+}
+
+@media screen AND (min-width: 940px) {
+  li {
+    font-size: 150%;
+  }
+}
